@@ -1,7 +1,7 @@
 #!/bin/sh
 
 AUTO_PORT_FILENAME=/tmp/.gramd
-DICTIONARIES="../data/ngrams-2.txt ../data/ngrams-3.txt"
+DICTIONARIES="../data/ngrams-2.txt ../data/ngrams-3.txt ../data/ngrams-4.txt"
 #OPTIONS="--interactive"
 
 `killall gramd 2> /dev/null`

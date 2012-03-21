@@ -16,22 +16,10 @@ AC_ARG_WITH([libgram-include-path],
   [LIBGRAM_CFLAGS=''])
 AC_SUBST([LIBGRAM_CFLAGS])
 
-AC_ARG_WITH([boost-include-path],
-  [AS_HELP_STRING([--with-boost-include-path],
-    [location of the BOOST headers])],
-  [BOOST_CFLAGS="-I$withval"],
-  [BOOST_CFLAGS=''])
-AC_SUBST([BOOST_CFLAGS])
-
-AC_ARG_WITH([boost-lib-path],
-  [AS_HELP_STRING([--with-boost-lib-path],
-    [location of the BOOST shared libraries])],
-  [BOOST_LDFLAGS="-L$withval"],
-  [BOOST_LDFLAGS=''])
-AC_SUBST([BOOST_LDFLAGS])
-
+AC_LANG_PUSH(C++)
 AC_CHECK_HEADER(tr1/unordered_map,[AC_DEFINE([LIBGRAM_HAVE_TR1],[],["Have tr1"])],[])
 AC_CHECK_HEADER(unordered_map,[AC_DEFINE([LIBGRAM_HAVE_CXX0X],[],["Have C++0x"])],[])
+AC_LANG_POP
 
 BOOST_REQUIRE([1.34])
 BOOST_THREADS([mt])
@@ -40,8 +28,7 @@ BOOST_SERIALIZATION([mt])
 BOOST_WSERIALIZATION([mt])
 BOOST_PROGRAM_OPTIONS([mt])
 
-CPPFLAGS=$LIBGRAM_CFLAGS $BOOST_CFLAGS
-LDFLAGS=$BOOST_LDFLAGS
+CPPFLAGS=$CPPFLAGS $LIBGRAM_CFLAGS
 
 AC_LANG_PUSH([C++])
 #	boost/serialization/collections_load_imp.hpp \

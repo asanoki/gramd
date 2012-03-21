@@ -15,6 +15,7 @@ gramd-gramd.o: gramd.cpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_pair.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/move.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/concept_check.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/type_traits \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_types.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_funcs.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator.h \
@@ -24,11 +25,15 @@ gramd-gramd.o: gramd.cpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/new_allocator.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/new \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/exception \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/exception_ptr.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/nested_exception.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_construct.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_uninitialized.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_vector.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/initializer_list \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_bvector.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/functional_hash.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hash_bytes.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/range_access.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/vector.tcc \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/string \
@@ -41,6 +46,9 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/bits/wchar.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/include/stddef.h \
  /usr/include/xlocale.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdint \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdint.h \
+ /usr/include/stdint.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/localefwd.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/c++locale.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/clocale \
@@ -65,6 +73,21 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/atomic_word.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/string_conversions.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h \
+ /usr/include/alloca.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cerrno \
+ /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/basic_string.tcc \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstring \
  /usr/include/string.h \
@@ -89,10 +112,6 @@ gramd-gramd.o: gramd.cpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/ostream.tcc \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/istream.tcc \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/codecvt.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/bits/stdio.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/basic_file.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/c++io.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/fstream.tcc \
@@ -117,12 +136,7 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
  /usr/include/boost/config/select_platform_config.hpp \
  /usr/include/boost/config/platform/linux.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib \
- /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h \
- /usr/include/alloca.h /usr/include/boost/config/posix_features.hpp \
+ /usr/include/boost/config/posix_features.hpp \
  /usr/include/boost/config/suffix.hpp /usr/include/boost/version.hpp \
  /usr/include/boost/config/auto_link.hpp \
  /usr/include/boost/program_options/errors.hpp \
@@ -134,7 +148,21 @@ gramd-gramd.o: gramd.cpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/algorithmfwd.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_heap.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_tempbuf.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/random \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cmath \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathinline.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.tcc \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/numeric \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_numeric.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeinfo \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/tuple \
  /usr/include/boost/type_traits/remove_reference.hpp \
  /usr/include/boost/type_traits/broken_compiler_spec.hpp \
  /usr/include/boost/mpl/aux_/lambda_support.hpp \
@@ -205,11 +233,14 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/function/detail/prologue.hpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cassert \
  /usr/include/assert.h /usr/include/boost/config/no_tr1/functional.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional \
  /usr/include/boost/function/function_base.hpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/memory \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_raw_storage_iter.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/concurrence.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/backward/auto_ptr.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/unique_ptr.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr_base.h \
  /usr/include/boost/detail/sp_typeinfo.hpp /usr/include/boost/assert.hpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/iostream \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
@@ -219,11 +250,8 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/boost/limits.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits \
- /usr/include/boost/cstdint.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdint.h \
- /usr/include/stdint.h /usr/include/boost/integer_traits.hpp \
+ /usr/include/boost/limits.hpp /usr/include/boost/cstdint.hpp \
+ /usr/include/boost/integer_traits.hpp \
  /usr/include/boost/type_traits/has_trivial_copy.hpp \
  /usr/include/boost/type_traits/intrinsics.hpp \
  /usr/include/boost/type_traits/is_same.hpp \
@@ -300,12 +328,6 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/preprocessor/repetition/enum_params.hpp \
  /usr/include/boost/detail/no_exceptions_support.hpp \
  /usr/include/boost/lexical_cast.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cmath \
- /usr/include/math.h /usr/include/bits/huge_val.h \
- /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
- /usr/include/bits/inf.h /usr/include/bits/nan.h \
- /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
- /usr/include/bits/mathinline.h \
  /usr/include/boost/numeric/conversion/cast.hpp \
  /usr/include/boost/type.hpp \
  /usr/include/boost/numeric/conversion/converter.hpp \
@@ -434,6 +456,7 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/functional/hash/detail/limits.hpp \
  /usr/include/boost/integer/static_log2.hpp \
  /usr/include/boost/functional/hash/detail/hash_float_generic.hpp \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeindex \
  /usr/include/boost/functional/hash/extensions.hpp \
  /usr/include/boost/detail/container_fwd.hpp \
  /usr/include/boost/unordered/detail/allocator_helpers.hpp \
@@ -471,20 +494,17 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/preprocessor/tuple/to_list.hpp \
  /usr/include/boost/preprocessor/list/transform.hpp \
  /usr/include/boost/preprocessor/list/append.hpp \
- /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp \
- /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp \
  /usr/include/boost/unordered/detail/util.hpp \
  /usr/include/boost/preprocessor/seq/size.hpp \
  /usr/include/boost/preprocessor/seq/enum.hpp \
  /usr/include/boost/unordered/detail/extract_key.hpp \
  /usr/include/boost/type_traits/remove_const.hpp \
  /usr/include/boost/unordered/detail/unique.hpp \
- /usr/include/boost/unordered/detail/move.hpp \
- /usr/include/boost/mpl/or.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
  /usr/include/boost/progress.hpp /usr/include/boost/timer.hpp \
  /usr/include/boost/utility.hpp \
  /usr/include/boost/utility/base_from_member.hpp \
+ /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp \
+ /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp \
  /usr/include/boost/utility/binary.hpp \
  /usr/include/boost/preprocessor/control/deduce_d.hpp \
  /usr/include/boost/preprocessor/seq/cat.hpp \
@@ -592,6 +612,8 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/preprocessor/comparison/not_equal.hpp \
  /usr/include/boost/serialization/smart_cast.hpp \
  /usr/include/boost/type_traits/remove_pointer.hpp \
+ /usr/include/boost/mpl/or.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
  /usr/include/boost/type_traits/remove_extent.hpp \
  /usr/include/boost/serialization/assume_abstract.hpp \
  /usr/include/boost/type_traits/has_new_operator.hpp \
@@ -625,6 +647,10 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/archive/detail/basic_pointer_oserializer.hpp \
  /usr/local/include/libgram/solver.h /usr/local/include/libgram/query.h \
  /usr/local/include/libgram/emissionprovider.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/unordered_map \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hashtable.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hashtable_policy.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/unordered_map.h \
  /usr/local/include/libgram/providers/simpleprovider.h data.h encoding.h \
  utf8codec.h /usr/include/boost/detail/utf8_codecvt_facet.hpp server.h \
  /usr/include/boost/asio.hpp \
@@ -646,10 +672,6 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/system/error_code.hpp \
  /usr/include/boost/system/config.hpp \
  /usr/include/boost/system/api_config.hpp /usr/include/boost/cerrno.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cerrno \
- /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/boost/asio/detail/task_io_service_fwd.hpp \
  /usr/include/boost/asio/impl/io_service.hpp \
  /usr/include/boost/asio/detail/handler_type_requirements.hpp \
@@ -674,9 +696,11 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/asio/detail/impl/service_registry.ipp \
  /usr/include/boost/asio/detail/task_io_service.hpp \
  /usr/include/boost/asio/detail/atomic_count.hpp \
- /usr/include/boost/detail/atomic_count.hpp \
- /usr/include/boost/smart_ptr/detail/atomic_count.hpp \
- /usr/include/boost/smart_ptr/detail/atomic_count_gcc_x86.hpp \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/atomic \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/atomic_base.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdbool.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/atomic_0.h \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/atomic_2.h \
  /usr/include/boost/asio/detail/op_queue.hpp \
  /usr/include/boost/asio/detail/reactor_fwd.hpp \
  /usr/include/boost/asio/detail/epoll_reactor_fwd.hpp \
@@ -728,6 +752,7 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/asio/detail/reactive_socket_service.hpp \
  /usr/include/boost/asio/buffer.hpp \
  /usr/include/boost/asio/detail/array_fwd.hpp \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/array \
  /usr/include/boost/asio/detail/buffer_sequence_adapter.hpp \
  /usr/include/boost/asio/detail/reactive_null_buffers_op.hpp \
  /usr/include/boost/asio/detail/reactive_socket_accept_op.hpp \
@@ -735,8 +760,6 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/asio/detail/socket_ops.hpp \
  /usr/include/boost/asio/detail/shared_ptr.hpp \
  /usr/include/boost/asio/detail/weak_ptr.hpp \
- /usr/include/boost/weak_ptr.hpp \
- /usr/include/boost/smart_ptr/weak_ptr.hpp \
  /usr/include/boost/asio/detail/impl/socket_ops.ipp \
  /usr/include/boost/asio/detail/reactive_socket_connect_op.hpp \
  /usr/include/boost/asio/detail/reactive_socket_recvfrom_op.hpp \
@@ -959,6 +982,7 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/thread/exceptions.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
+ /usr/include/boost/smart_ptr/weak_ptr.hpp \
  /usr/include/boost/thread/mutex.hpp \
  /usr/include/boost/thread/pthread/mutex.hpp \
  /usr/include/boost/thread/locks.hpp \
@@ -1132,6 +1156,8 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/concept_check.h:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/type_traits:
+
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_types.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_funcs.h:
@@ -1150,6 +1176,10 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/exception:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/exception_ptr.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/nested_exception.h:
+
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_construct.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_uninitialized.h:
@@ -1159,6 +1189,10 @@ gramd-gramd.o: gramd.cpp \
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/initializer_list:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_bvector.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/functional_hash.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hash_bytes.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/range_access.h:
 
@@ -1185,6 +1219,12 @@ gramd-gramd.o: gramd.cpp \
 /usr/lib/gcc/i686-redhat-linux/4.6.2/include/stddef.h:
 
 /usr/include/xlocale.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdint:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdint.h:
+
+/usr/include/stdint.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/localefwd.h:
 
@@ -1256,6 +1296,54 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/atomic_word.h:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/string_conversions.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/alloca.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cerrno:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/basic_string.tcc:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstring:
@@ -1303,18 +1391,6 @@ gramd-gramd.o: gramd.cpp \
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/istream.tcc:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/codecvt.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio:
-
-/usr/include/libio.h:
-
-/usr/include/_G_config.h:
-
-/usr/include/bits/stdio_lim.h:
-
-/usr/include/bits/sys_errlist.h:
-
-/usr/include/bits/stdio.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/basic_file.h:
 
@@ -1366,26 +1442,6 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/include/boost/config/platform/linux.hpp:
 
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib:
-
-/usr/include/stdlib.h:
-
-/usr/include/bits/waitflags.h:
-
-/usr/include/bits/waitstatus.h:
-
-/usr/include/sys/types.h:
-
-/usr/include/sys/select.h:
-
-/usr/include/bits/select.h:
-
-/usr/include/bits/sigset.h:
-
-/usr/include/sys/sysmacros.h:
-
-/usr/include/alloca.h:
-
 /usr/include/boost/config/posix_features.hpp:
 
 /usr/include/boost/config/suffix.hpp:
@@ -1412,7 +1468,43 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_tempbuf.h:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/random:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cmath:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.tcc:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/numeric:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_numeric.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional:
+
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeinfo:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/tuple:
 
 /usr/include/boost/type_traits/remove_reference.hpp:
 
@@ -1560,15 +1652,21 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/include/boost/config/no_tr1/functional.hpp:
 
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional:
-
 /usr/include/boost/function/function_base.hpp:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/memory:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_raw_storage_iter.h:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/concurrence.h:
+
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/backward/auto_ptr.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/unique_ptr.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr_base.h:
 
 /usr/include/boost/detail/sp_typeinfo.hpp:
 
@@ -1600,13 +1698,7 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/include/boost/limits.hpp:
 
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits:
-
 /usr/include/boost/cstdint.hpp:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdint.h:
-
-/usr/include/stdint.h:
 
 /usr/include/boost/integer_traits.hpp:
 
@@ -1771,26 +1863,6 @@ gramd-gramd.o: gramd.cpp \
 /usr/include/boost/detail/no_exceptions_support.hpp:
 
 /usr/include/boost/lexical_cast.hpp:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cmath:
-
-/usr/include/math.h:
-
-/usr/include/bits/huge_val.h:
-
-/usr/include/bits/huge_valf.h:
-
-/usr/include/bits/huge_vall.h:
-
-/usr/include/bits/inf.h:
-
-/usr/include/bits/nan.h:
-
-/usr/include/bits/mathdef.h:
-
-/usr/include/bits/mathcalls.h:
-
-/usr/include/bits/mathinline.h:
 
 /usr/include/boost/numeric/conversion/cast.hpp:
 
@@ -2054,6 +2126,8 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/include/boost/functional/hash/detail/hash_float_generic.hpp:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeindex:
+
 /usr/include/boost/functional/hash/extensions.hpp:
 
 /usr/include/boost/detail/container_fwd.hpp:
@@ -2132,10 +2206,6 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/include/boost/preprocessor/list/append.hpp:
 
-/usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
-
-/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
-
 /usr/include/boost/unordered/detail/util.hpp:
 
 /usr/include/boost/preprocessor/seq/size.hpp:
@@ -2148,12 +2218,6 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/include/boost/unordered/detail/unique.hpp:
 
-/usr/include/boost/unordered/detail/move.hpp:
-
-/usr/include/boost/mpl/or.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
-
 /usr/include/boost/progress.hpp:
 
 /usr/include/boost/timer.hpp:
@@ -2161,6 +2225,10 @@ gramd-gramd.o: gramd.cpp \
 /usr/include/boost/utility.hpp:
 
 /usr/include/boost/utility/base_from_member.hpp:
+
+/usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
+
+/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
 
 /usr/include/boost/utility/binary.hpp:
 
@@ -2386,6 +2454,10 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/include/boost/type_traits/remove_pointer.hpp:
 
+/usr/include/boost/mpl/or.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
+
 /usr/include/boost/type_traits/remove_extent.hpp:
 
 /usr/include/boost/serialization/assume_abstract.hpp:
@@ -2454,6 +2526,14 @@ gramd-gramd.o: gramd.cpp \
 
 /usr/local/include/libgram/emissionprovider.h:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/unordered_map:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hashtable.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hashtable_policy.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/unordered_map.h:
+
 /usr/local/include/libgram/providers/simpleprovider.h:
 
 data.h:
@@ -2507,20 +2587,6 @@ server.h:
 /usr/include/boost/system/api_config.hpp:
 
 /usr/include/boost/cerrno.hpp:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cerrno:
-
-/usr/include/errno.h:
-
-/usr/include/bits/errno.h:
-
-/usr/include/linux/errno.h:
-
-/usr/include/asm/errno.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/asm-generic/errno-base.h:
 
 /usr/include/boost/asio/detail/task_io_service_fwd.hpp:
 
@@ -2586,11 +2652,15 @@ server.h:
 
 /usr/include/boost/asio/detail/atomic_count.hpp:
 
-/usr/include/boost/detail/atomic_count.hpp:
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/atomic:
 
-/usr/include/boost/smart_ptr/detail/atomic_count.hpp:
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/atomic_base.h:
 
-/usr/include/boost/smart_ptr/detail/atomic_count_gcc_x86.hpp:
+/usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdbool.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/atomic_0.h:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/atomic_2.h:
 
 /usr/include/boost/asio/detail/op_queue.hpp:
 
@@ -2720,6 +2790,8 @@ server.h:
 
 /usr/include/boost/asio/detail/array_fwd.hpp:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/array:
+
 /usr/include/boost/asio/detail/buffer_sequence_adapter.hpp:
 
 /usr/include/boost/asio/detail/reactive_null_buffers_op.hpp:
@@ -2733,10 +2805,6 @@ server.h:
 /usr/include/boost/asio/detail/shared_ptr.hpp:
 
 /usr/include/boost/asio/detail/weak_ptr.hpp:
-
-/usr/include/boost/weak_ptr.hpp:
-
-/usr/include/boost/smart_ptr/weak_ptr.hpp:
 
 /usr/include/boost/asio/detail/impl/socket_ops.ipp:
 
@@ -3215,6 +3283,8 @@ server.h:
 /usr/include/boost/enable_shared_from_this.hpp:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
+
+/usr/include/boost/smart_ptr/weak_ptr.hpp:
 
 /usr/include/boost/thread/mutex.hpp:
 
