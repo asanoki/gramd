@@ -8,16 +8,16 @@
 #include <fstream>
 #include <sstream>
 #include <cassert>
-#include <boost/progress.hpp>
 #include <boost/shared_ptr.hpp>
 
 #include "data.h"
 #include "encoding.h"
+#include "boost_extras/wprogress.h"
 
 namespace data {
 
 int loadNGrams(std::string filename,
-		boost::unordered_map<std::wstring, double> &result, bool quiet = false) {
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &result, bool quiet = false) {
 	// Loading n-grams from a file
 	std::wifstream data(filename.c_str());
 	data.imbue(*encoding::getUtf8Locale());
@@ -26,7 +26,7 @@ int loadNGrams(std::string filename,
 	data.seekg(0, std::ios::end);
 	int input_size = data.tellg();
 	data.seekg(0, std::ios::beg);
-	boost::progress_display show_progress(input_size);
+	boost::progress_display show_progress(input_size, std::wcout);
 	boost::shared_ptr<boost::progress_timer> timer;
 	if (!quiet)
 		timer.reset(new boost::progress_timer());
@@ -55,7 +55,8 @@ int loadNGrams(std::string filename,
 		std::wstringstream stream(
 				line.substr(n + 1, line.length() - n - 1).c_str());
 		stream >> line_value;
-		result[line_gram] = line_value;
+		libgram::FastString<wchar_t> fast_gram(n, line_gram.length(), 0, line_gram.c_str());
+		result[fast_gram] = line_value;
 	}
 	if (!quiet) {
 		show_progress.operator +=(input_size - show_progress.count());
@@ -104,8 +105,9 @@ bool loadQuery(std::wstringstream &data, libgram::Query<wchar_t> &query) {
 	return true;
 }
 
+/*
 bool saveCache(std::string filename,
-		boost::unordered_map<std::wstring, double> &container) {
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &container) {
 	std::ofstream data(filename.c_str(), std::ios::binary);
 	if (!data.good())
 		return false;
@@ -122,7 +124,7 @@ bool saveCache(std::string filename,
 }
 
 bool loadCache(std::string filename,
-		boost::unordered_map<std::wstring, double> &container) {
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &container) {
 	std::ifstream data(filename.c_str(), std::ios::binary);
 	if (!data.good())
 		return false;
@@ -140,5 +142,6 @@ bool loadCache(std::string filename,
 	data.close();
 	return true;
 }
+*/
 
 }

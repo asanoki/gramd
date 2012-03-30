@@ -27,6 +27,8 @@
 #include "encoding.h"
 #include "server.h"
 
+int FastStringDebug = 0;
+
 namespace po = boost::program_options;
 
 namespace boost {
@@ -101,7 +103,7 @@ int main(int argc, char **argv) {
 				std::locale::global(std::locale(locale_name.c_str()));
 				setlocale(LC_ALL, locale_name.c_str());
 			} catch (...) {
-				std::cerr << "Unable to set locale to: " << locale_name
+				std::wcerr << "Unable to set locale to: " << locale_name.c_str()
 						<< std::endl;
 				return -1;
 			}
@@ -111,7 +113,7 @@ int main(int argc, char **argv) {
 				std::locale::global(std::locale(""));
 				setlocale(LC_ALL, "");
 			} catch (...) {
-				std::cerr << "Unable to set to system locale. Trying C instead."
+				std::wcerr << "Unable to set to system locale. Trying C instead."
 						<< std::endl;
 				std::locale::global(std::locale("C"));
 				setlocale(LC_ALL, "C");
@@ -143,17 +145,18 @@ int main(int argc, char **argv) {
 					}
 				}
 			}
-			std::ofstream port_file(vm["auto"].as<std::string>().c_str(), std::ios::out);
+			std::ofstream port_file(vm["auto"].as<std::string>().c_str(),
+					std::ios::out);
 			port_file.imbue(std::locale("C"));
 			port_file << port << "\n";
 			port_file.close();
 		}
 
 		if (!quiet)
-			std::cout << "Listening on port: " << port << "." << std::endl;
+			std::wcout << "Listening on port: " << port << "." << std::endl;
 
 		// Load dictionaries
-		boost::unordered_map<std::wstring, double> map;
+		boost::unordered_map<libgram::FastString<wchar_t>, double> map;
 		std::vector<std::string> dict =
 				vm["load"].as<std::vector<std::string> >();
 		int max_gram = 0;
@@ -162,16 +165,16 @@ int main(int argc, char **argv) {
 				it != dict.end(); ++it) {
 			std::string filename = *it;
 			if (!quiet)
-				std::cout << "Loading dictionary: " << filename << "..."
+				std::wcout << "Loading dictionary: " << filename.c_str() << L"..."
 						<< std::endl;
 			grams_before = map.size();
 			int n = data::loadNGrams(filename, map, quiet);
 			if (!quiet)
-				std::cout << "Loaded, " << (map.size() - grams_before) << " * "
+				std::wcout << "Loaded, " << (map.size() - grams_before) << " * "
 						<< n << "-grams." << std::endl;
 			if (n < 0) {
 				// Unabled to load dictionary
-				std::cerr << "Unable to load dictionary: " << filename
+				std::wcerr << "Unable to load dictionary: " << filename.c_str()
 						<< std::endl;
 				return -1;
 			}
@@ -179,19 +182,46 @@ int main(int argc, char **argv) {
 				max_gram = n;
 		}
 		if (!quiet)
-			std::cout << "Loaded dictionaries with " << map.size()
+			std::wcout << "Loaded dictionaries with " << map.size()
 					<< " grams in total." << std::endl;
 
-		// Convert occurences to probabilities
-		double ngrams_sum = 0;
-		for (boost::unordered_map<std::wstring, double>::iterator it =
+
+		/* Generate grams of smaller order */
+		boost::unordered_map<libgram::FastString<wchar_t>, double> sub_map;
+		for (boost::unordered_map<libgram::FastString<wchar_t>, double>::iterator it =
 				map.begin(); it != map.end(); it++) {
-			ngrams_sum += it->second;
+			double sum = it->second;
+			libgram::FastString<wchar_t> last = it->first;
+			for (int sub_gram_n = max_gram - 1; sub_gram_n >= 0; sub_gram_n--) {
+				libgram::FastString<wchar_t> key(0, last);
+				if (sub_map.find(key) == sub_map.end()) {
+					// New entry
+					sub_map[key] = 0;
+					assert(sub_map.find(key) != sub_map.end());
+				}
+				sub_map[key] += sum;
+				// std::wcout << "Value [" << key << "]" << sub_map[key] << std::endl;
+				last = key;
+			}
 		}
-		for (boost::unordered_map<std::wstring, double>::iterator it =
-				map.begin(); it != map.end(); it++) {
-			map[it->first] = it->second / ngrams_sum;
-		}
+
+		map.insert(sub_map.begin(), sub_map.end());
+		if (!quiet)
+			std::wcout << "Generated " << map.size()
+					<< " m-grams in total." << std::endl;
+
+		/*
+		 // Convert occurences to probabilities
+		 double ngrams_sum = 0;
+		 for (boost::unordered_map<std::wstring, double>::iterator it =
+		 map.begin(); it != map.end(); it++) {
+		 ngrams_sum += it->second;
+		 }
+		 for (boost::unordered_map<std::wstring, double>::iterator it =
+		 map.begin(); it != map.end(); it++) {
+		 map[it->first] = it->second / ngrams_sum;
+		 }
+		 */
 
 		/*
 		 // Save cache
@@ -209,7 +239,7 @@ int main(int argc, char **argv) {
 
 		// Create emission provider
 		libgram::SimpleProvider<wchar_t,
-				boost::unordered_map<std::wstring, double> > provider;
+				boost::unordered_map<libgram::FastString<wchar_t>, double> > provider;
 		provider.setContainer(&map);
 		provider.setMaximumGram(max_gram);
 
@@ -221,7 +251,7 @@ int main(int argc, char **argv) {
 			provider.setAutoEpsilon();
 		}
 		if (!quiet)
-			std::cout << "The longest gram is: " << provider.maximumGram()
+			std::wcout << "The longest gram is: " << provider.maximumGram()
 					<< ", epsilon is: " << provider.epsilon() << "."
 					<< std::endl;
 
@@ -231,23 +261,23 @@ int main(int argc, char **argv) {
 		// Detach socket (or not)
 		if (!vm.count("interactive")) {
 			if (!quiet)
-				std::cout << "Detaching..." << std::endl;
+				std::wcout << "Detaching..." << std::endl;
 			if (daemon(0, 0) < 0) {
-				std::cerr << "Unable to detach" << std::endl;
+				std::wcerr << "Unable to detach" << std::endl;
 				return -1;
 			}
 		}
 
 		// Start server loop
 		if (!quiet)
-			std::cout << "Started." << std::endl;
+			std::wcout << "Started." << std::endl;
 		server_loop(solver, io_service, acceptor);
 		if (!quiet)
-			std::cout << "Closed." << std::endl;
+			std::wcout << "Closed." << std::endl;
 
 		return 0;
 	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::wcout << e.what() << std::endl;
 		return -1;
 	}
 }

@@ -38,7 +38,6 @@ void session(libgram::Solver<wchar_t> &solver, socket_ptr sock) {
 		std::wstringstream task_stream;
 		wchar_t wchar_buffer[4096];
 		int empty_lines_counter = 0;
-		// bool locale_auto = true;
 
 		boost::asio::ip::tcp::no_delay option(true);
 		sock.get()->set_option(option);
@@ -54,19 +53,6 @@ void session(libgram::Solver<wchar_t> &solver, socket_ptr sock) {
 			std::string line;
 			std::wstring decoded_line;
 			while (std::getline(response_stream, line)) {
-				/*
-				 if (line.compare("utf-8") == 0) {
-				 locale_auto = false;
-				 continue;
-				 }
-				 if (line.compare("auto") == 0) {
-				 locale_auto = true;
-				 continue;
-				 }
-				 */
-				// std::cout << "Received: " << line << std::endl;
-				// Recoding of the line
-				// OBSOLETE: mbstowcs(wchar_buffer, line.c_str(), 4096); // TODO: Check off by one
 				if (line.length() > 4096 - 1) {
 					throw DataException();
 				}
@@ -77,13 +63,11 @@ void session(libgram::Solver<wchar_t> &solver, socket_ptr sock) {
 					if (empty_lines_counter == 2) {
 						// Got empty line, so we will process
 						empty_lines_counter = 0;
-//						std::cerr << "task received." << std::endl;
-						// std::cout << "Task received." << std::endl;
+						// std::wcout << "Task received." << std::endl;
 						libgram::Query<wchar_t> query;
 						data::loadQuery(task_stream, query);
 						std::wstring result = solver.solve(query) + L"\n";
-						// OBSOLETE: int length = wcstombs(output_buffer.get(), result.c_str(),
-						// 		result.size() * 16); // TODO: Check off by one
+						std::wcout << "Result is: " << result << std::endl;
 						boost::shared_ptr<char> output_buffer(new char[(result.length() + 1) * 16]); // TODO: Possible buffer overflow for crazy encodings
 						size_t length = encoding::exportAsUtf8(output_buffer.get(), result.c_str(),
 								(result.length() + 1) * 16, result.length() + 1);
@@ -102,7 +86,8 @@ void session(libgram::Solver<wchar_t> &solver, socket_ptr sock) {
 			response_stream.clear();
 		}
 	} catch (std::exception& e) {
-		std::cerr << "Exception in thread: " << e.what() << "\n";
+		std::wcerr << "Exception in thread: " << e.what() << std::endl;
+		// std::wcerr << boost::diagnostic_information(e);
 	}
 }
 

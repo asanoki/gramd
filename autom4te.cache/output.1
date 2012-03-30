@@ -15025,6 +15025,14 @@ $as_echo "@%:@define LIBGRAM_HAVE_CXX0X /**/" >>confdefs.h
 fi
 
 
+ac_fn_cxx_check_header_mongrel "$LINENO" "boost/unordered_map.hpp" "ac_cv_header_boost_unordered_map_hpp" "$ac_includes_default"
+if test "x$ac_cv_header_boost_unordered_map_hpp" = xyes; then :
+  
+$as_echo "@%:@define LIBGRAM_HAVE_BOOST /**/" >>confdefs.h
+
+fi
+
+
 ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'
 ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'

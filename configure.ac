@@ -19,6 +19,7 @@ AC_SUBST([LIBGRAM_CFLAGS])
 AC_LANG_PUSH(C++)
 AC_CHECK_HEADER(tr1/unordered_map,[AC_DEFINE([LIBGRAM_HAVE_TR1],[],["Have tr1"])],[])
 AC_CHECK_HEADER(unordered_map,[AC_DEFINE([LIBGRAM_HAVE_CXX0X],[],["Have C++0x"])],[])
+AC_CHECK_HEADER(boost/unordered_map.hpp,[AC_DEFINE([LIBGRAM_HAVE_BOOST],[],["Have boost::unordered_map"])],[])
 AC_LANG_POP
 
 BOOST_REQUIRE([1.34])

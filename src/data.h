@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <libgram/query.h>
+#include <libgram/faststring.h>
 #include <boost/unordered_map.hpp>
 
 namespace data {
@@ -17,15 +18,17 @@ namespace data {
 bool setUtf8InternalLocale();
 
 int loadNGrams(std::string filename,
-		boost::unordered_map<std::wstring, double> &result, bool quiet);
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &result, bool quiet);
 
 bool loadQuery(std::wstringstream &data, libgram::Query<wchar_t> &query);
 
+/*
 bool saveCache(std::string filename,
-		boost::unordered_map<std::wstring, double> &container);
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &container);
 
 bool loadCache(std::string filename,
-		boost::unordered_map<std::wstring, double> &container);
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &container);
+*/
 
 }
 

@@ -36,21 +36,15 @@ gramd-encoding.o: encoding.cpp encoding.h utf8codec.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_pair.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/move.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/concept_check.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/type_traits \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_types.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_funcs.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/debug/debug.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdint \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdint.h \
- /usr/include/stdint.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/allocator.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/c++allocator.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/new_allocator.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/new \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/exception \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/exception_ptr.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/nested_exception.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/ostream_insert.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/cxxabi_forced.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_function.h \
@@ -68,23 +62,6 @@ gramd-encoding.o: encoding.cpp encoding.h utf8codec.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/atomic_word.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/initializer_list \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/string_conversions.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib \
- /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h \
- /usr/include/alloca.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/bits/stdio.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cerrno \
- /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/functional_hash.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hash_bytes.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/basic_string.tcc \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/locale_classes.tcc \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/locale_facets.h \
@@ -115,7 +92,12 @@ gramd-encoding.o: encoding.cpp encoding.h utf8codec.h \
  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
  /usr/include/boost/config/select_platform_config.hpp \
  /usr/include/boost/config/platform/linux.hpp \
- /usr/include/boost/config/posix_features.hpp \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h \
+ /usr/include/alloca.h /usr/include/boost/config/posix_features.hpp \
  /usr/include/boost/config/suffix.hpp \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/shared_ptr.hpp \
@@ -126,14 +108,7 @@ gramd-encoding.o: encoding.cpp encoding.h utf8codec.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_uninitialized.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_tempbuf.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_raw_storage_iter.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeinfo \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/concurrence.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/tuple \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/backward/auto_ptr.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/unique_ptr.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr_base.h \
  /usr/include/boost/assert.hpp /usr/include/assert.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/iostream \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ostream \
@@ -154,7 +129,9 @@ gramd-encoding.o: encoding.cpp encoding.h utf8codec.h \
  /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp \
  /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp \
  /usr/include/boost/detail/sp_typeinfo.hpp \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeinfo \
  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional \
  /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
  /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp \
  /usr/include/boost/smart_ptr/detail/spinlock.hpp \
@@ -165,24 +142,12 @@ gramd-encoding.o: encoding.cpp encoding.h utf8codec.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_algo.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/algorithmfwd.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_heap.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/random \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cmath \
- /usr/include/math.h /usr/include/bits/huge_val.h \
- /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
- /usr/include/bits/inf.h /usr/include/bits/nan.h \
- /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
- /usr/include/bits/mathinline.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/vector \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_vector.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_bvector.h \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/vector.tcc \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.tcc \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/numeric \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_numeric.h \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cassert
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cassert \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h
 
 encoding.h:
 
@@ -276,8 +241,6 @@ utf8codec.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/concept_check.h:
 
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/type_traits:
-
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_types.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator_base_funcs.h:
@@ -285,12 +248,6 @@ utf8codec.h:
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_iterator.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/debug/debug.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdint:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/include/stdint.h:
-
-/usr/include/stdint.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/allocator.h:
 
@@ -301,10 +258,6 @@ utf8codec.h:
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/new:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/exception:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/exception_ptr.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/nested_exception.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/ostream_insert.h:
 
@@ -353,58 +306,6 @@ utf8codec.h:
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/i686-redhat-linux/bits/atomic_word.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/initializer_list:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/string_conversions.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib:
-
-/usr/include/stdlib.h:
-
-/usr/include/bits/waitflags.h:
-
-/usr/include/bits/waitstatus.h:
-
-/usr/include/sys/types.h:
-
-/usr/include/sys/select.h:
-
-/usr/include/bits/select.h:
-
-/usr/include/bits/sigset.h:
-
-/usr/include/sys/sysmacros.h:
-
-/usr/include/alloca.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio:
-
-/usr/include/libio.h:
-
-/usr/include/_G_config.h:
-
-/usr/include/bits/stdio_lim.h:
-
-/usr/include/bits/sys_errlist.h:
-
-/usr/include/bits/stdio.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cerrno:
-
-/usr/include/errno.h:
-
-/usr/include/bits/errno.h:
-
-/usr/include/linux/errno.h:
-
-/usr/include/asm/errno.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/functional_hash.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/hash_bytes.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/basic_string.tcc:
 
@@ -468,6 +369,26 @@ utf8codec.h:
 
 /usr/include/boost/config/platform/linux.hpp:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/alloca.h:
+
 /usr/include/boost/config/posix_features.hpp:
 
 /usr/include/boost/config/suffix.hpp:
@@ -490,21 +411,7 @@ utf8codec.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_raw_storage_iter.h:
 
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeinfo:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/ext/concurrence.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/tuple:
-
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/backward/auto_ptr.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/unique_ptr.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/shared_ptr_base.h:
 
 /usr/include/boost/assert.hpp:
 
@@ -548,7 +455,11 @@ utf8codec.h:
 
 /usr/include/boost/detail/sp_typeinfo.hpp:
 
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/typeinfo:
+
 /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/functional:
 
 /usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
 
@@ -570,46 +481,18 @@ utf8codec.h:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_heap.h:
 
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/random:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cmath:
-
-/usr/include/math.h:
-
-/usr/include/bits/huge_val.h:
-
-/usr/include/bits/huge_valf.h:
-
-/usr/include/bits/huge_vall.h:
-
-/usr/include/bits/inf.h:
-
-/usr/include/bits/nan.h:
-
-/usr/include/bits/mathdef.h:
-
-/usr/include/bits/mathcalls.h:
-
-/usr/include/bits/mathinline.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/vector:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_vector.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_bvector.h:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/vector.tcc:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/random.tcc:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/numeric:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/stl_numeric.h:
-
 /usr/include/boost/smart_ptr/detail/operator_bool.hpp:
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cassert:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstdio:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
