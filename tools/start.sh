@@ -1,11 +1,11 @@
 #!/bin/sh
 
 AUTO_PORT_FILENAME=/tmp/.gramd
-#DICTIONARIES="../data/ngrams-2.txt ../data/ngrams-3.txt ../data/ngrams-4.txt"
-#DICTIONARIES="../data/ngrams-2.txt ../data/ngrams-3.txt/ ../data/ngrams-4.txt"
-DICTIONARIES="../data/ngrams-3.txt"
-#OPTIONS="--epsilon 1.0e-20"
-OPTIONS="--interactive --epsilon 0.001"
+DICTIONARIES="../data/ngrams-2.txt"
+BIN_COMMAND=gramd # <- Change it if installed in custom location
+
+#OPTIONS="--interactive --epsilon 0.01"
+OPTIONS="--verbose --epsilon 0.0001"
 
 `killall gramd 2> /dev/null`
 if [ $? -eq 0 ]; then
@@ -14,4 +14,4 @@ if [ $? -eq 0 ]; then
 fi
 
 rm $AUTO_PORT_FILENAME 2> /dev/null
-gramd $DICTIONARIES --auto $AUTO_PORT_FILENAME $OPTIONS
+$BIN_COMMAND $DICTIONARIES --auto $AUTO_PORT_FILENAME $OPTIONS

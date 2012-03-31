@@ -153,26 +153,7 @@ gramd-data.o: data.cpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/bits/vector.tcc \
  /usr/include/libgram/faststring.h \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/cstring \
- /usr/include/string.h /usr/include/boost/pool/pool_alloc.hpp \
- /usr/include/boost/limits.hpp \
- /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits \
- /usr/include/boost/pool/poolfwd.hpp \
- /usr/include/boost/pool/detail/mutex.hpp \
- /usr/include/boost/pool/singleton_pool.hpp \
- /usr/include/boost/pool/pool.hpp \
- /usr/include/boost/pool/detail/ct_gcd_lcm.hpp \
- /usr/include/boost/static_assert.hpp \
- /usr/include/boost/type_traits/ice.hpp \
- /usr/include/boost/type_traits/detail/yes_no_type.hpp \
- /usr/include/boost/type_traits/detail/ice_or.hpp \
- /usr/include/boost/type_traits/detail/ice_and.hpp \
- /usr/include/boost/type_traits/detail/ice_not.hpp \
- /usr/include/boost/type_traits/detail/ice_eq.hpp \
- /usr/include/boost/pool/detail/gcd_lcm.hpp \
- /usr/include/boost/pool/simple_segregated_storage.hpp \
- /usr/include/boost/pool/detail/singleton.hpp \
- /usr/include/boost/pool/detail/guard.hpp \
- /usr/include/boost/unordered_map.hpp \
+ /usr/include/string.h /usr/include/boost/unordered_map.hpp \
  /usr/include/boost/unordered/unordered_map.hpp \
  /usr/include/boost/unordered/unordered_map_fwd.hpp \
  /usr/include/boost/functional/hash_fwd.hpp \
@@ -189,6 +170,8 @@ gramd-data.o: data.cpp \
  /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
  /usr/include/bits/mathinline.h \
  /usr/include/boost/functional/hash/detail/limits.hpp \
+ /usr/include/boost/limits.hpp \
+ /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits \
  /usr/include/boost/integer/static_log2.hpp \
  /usr/include/boost/integer_fwd.hpp \
  /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/climits \
@@ -316,6 +299,12 @@ gramd-data.o: data.cpp \
  /usr/include/boost/type_traits/is_reference.hpp \
  /usr/include/boost/type_traits/is_lvalue_reference.hpp \
  /usr/include/boost/type_traits/is_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/ice.hpp \
+ /usr/include/boost/type_traits/detail/yes_no_type.hpp \
+ /usr/include/boost/type_traits/detail/ice_or.hpp \
+ /usr/include/boost/type_traits/detail/ice_and.hpp \
+ /usr/include/boost/type_traits/detail/ice_not.hpp \
+ /usr/include/boost/type_traits/detail/ice_eq.hpp \
  /usr/include/boost/type_traits/is_volatile.hpp \
  /usr/include/boost/type_traits/detail/cv_traits_impl.hpp \
  /usr/include/boost/type_traits/is_array.hpp \
@@ -328,6 +317,7 @@ gramd-data.o: data.cpp \
  /usr/include/boost/type_traits/is_void.hpp \
  /usr/include/boost/type_traits/is_abstract.hpp \
  /usr/include/boost/type_traits/add_rvalue_reference.hpp \
+ /usr/include/boost/static_assert.hpp \
  /usr/include/boost/iterator/detail/config_undef.hpp \
  /usr/include/boost/unordered/detail/buckets.hpp \
  /usr/include/boost/unordered/detail/node.hpp \
@@ -759,44 +749,6 @@ data.h:
 
 /usr/include/string.h:
 
-/usr/include/boost/pool/pool_alloc.hpp:
-
-/usr/include/boost/limits.hpp:
-
-/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits:
-
-/usr/include/boost/pool/poolfwd.hpp:
-
-/usr/include/boost/pool/detail/mutex.hpp:
-
-/usr/include/boost/pool/singleton_pool.hpp:
-
-/usr/include/boost/pool/pool.hpp:
-
-/usr/include/boost/pool/detail/ct_gcd_lcm.hpp:
-
-/usr/include/boost/static_assert.hpp:
-
-/usr/include/boost/type_traits/ice.hpp:
-
-/usr/include/boost/type_traits/detail/yes_no_type.hpp:
-
-/usr/include/boost/type_traits/detail/ice_or.hpp:
-
-/usr/include/boost/type_traits/detail/ice_and.hpp:
-
-/usr/include/boost/type_traits/detail/ice_not.hpp:
-
-/usr/include/boost/type_traits/detail/ice_eq.hpp:
-
-/usr/include/boost/pool/detail/gcd_lcm.hpp:
-
-/usr/include/boost/pool/simple_segregated_storage.hpp:
-
-/usr/include/boost/pool/detail/singleton.hpp:
-
-/usr/include/boost/pool/detail/guard.hpp:
-
 /usr/include/boost/unordered_map.hpp:
 
 /usr/include/boost/unordered/unordered_map.hpp:
@@ -838,6 +790,10 @@ data.h:
 /usr/include/bits/mathinline.h:
 
 /usr/include/boost/functional/hash/detail/limits.hpp:
+
+/usr/include/boost/limits.hpp:
+
+/usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/limits:
 
 /usr/include/boost/integer/static_log2.hpp:
 
@@ -1109,6 +1065,18 @@ data.h:
 
 /usr/include/boost/type_traits/is_rvalue_reference.hpp:
 
+/usr/include/boost/type_traits/ice.hpp:
+
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
+
+/usr/include/boost/type_traits/detail/ice_or.hpp:
+
+/usr/include/boost/type_traits/detail/ice_and.hpp:
+
+/usr/include/boost/type_traits/detail/ice_not.hpp:
+
+/usr/include/boost/type_traits/detail/ice_eq.hpp:
+
 /usr/include/boost/type_traits/is_volatile.hpp:
 
 /usr/include/boost/type_traits/detail/cv_traits_impl.hpp:
@@ -1132,6 +1100,8 @@ data.h:
 /usr/include/boost/type_traits/is_abstract.hpp:
 
 /usr/include/boost/type_traits/add_rvalue_reference.hpp:
+
+/usr/include/boost/static_assert.hpp:
 
 /usr/include/boost/iterator/detail/config_undef.hpp:
 

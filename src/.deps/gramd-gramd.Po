@@ -625,16 +625,7 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/archive/detail/basic_pointer_oserializer.hpp \
  /usr/include/libgram/solver.h /usr/include/libgram/query.h \
  /usr/include/libgram/emissionprovider.h \
- /usr/include/libgram/faststring.h /usr/include/boost/pool/pool_alloc.hpp \
- /usr/include/boost/pool/poolfwd.hpp \
- /usr/include/boost/pool/detail/mutex.hpp \
- /usr/include/boost/pool/singleton_pool.hpp \
- /usr/include/boost/pool/pool.hpp \
- /usr/include/boost/pool/detail/ct_gcd_lcm.hpp \
- /usr/include/boost/pool/detail/gcd_lcm.hpp \
- /usr/include/boost/pool/simple_segregated_storage.hpp \
- /usr/include/boost/pool/detail/singleton.hpp \
- /usr/include/boost/pool/detail/guard.hpp \
+ /usr/include/libgram/faststring.h \
  /usr/include/libgram/providers/simpleprovider.h data.h encoding.h \
  utf8codec.h /usr/include/boost/detail/utf8_codecvt_facet.hpp server.h \
  /usr/include/boost/asio.hpp \
@@ -2465,26 +2456,6 @@ gramd-gramd.o: gramd.cpp \
 /usr/include/libgram/emissionprovider.h:
 
 /usr/include/libgram/faststring.h:
-
-/usr/include/boost/pool/pool_alloc.hpp:
-
-/usr/include/boost/pool/poolfwd.hpp:
-
-/usr/include/boost/pool/detail/mutex.hpp:
-
-/usr/include/boost/pool/singleton_pool.hpp:
-
-/usr/include/boost/pool/pool.hpp:
-
-/usr/include/boost/pool/detail/ct_gcd_lcm.hpp:
-
-/usr/include/boost/pool/detail/gcd_lcm.hpp:
-
-/usr/include/boost/pool/simple_segregated_storage.hpp:
-
-/usr/include/boost/pool/detail/singleton.hpp:
-
-/usr/include/boost/pool/detail/guard.hpp:
 
 /usr/include/libgram/providers/simpleprovider.h:
 
