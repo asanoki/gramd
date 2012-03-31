@@ -35,9 +35,6 @@ int main(int argc, char **argv) {
 		// Main object
 		libgram::Solver<wchar_t> solver;
 
-		// Additional variables
-		bool quiet = false;
-
 		// Initialize
 		po::options_description desc;
 		desc.add_options()("epsilon", po::value<double>(), "epsilon value");
@@ -170,7 +167,7 @@ int main(int argc, char **argv) {
 			Log::message << "Loading dictionary: " << filename.c_str()
 					<< L"..." << std::endl;
 			grams_before = map.size();
-			int n = data::loadNGrams(filename, map, quiet);
+			int n = data::loadNGrams(filename, map);
 			Log::message << "Loaded, " << (map.size() - grams_before) << " * "
 					<< n << "-grams." << std::endl;
 			if (n < 0) {

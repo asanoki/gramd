@@ -18,7 +18,7 @@ namespace data {
 bool setUtf8InternalLocale();
 
 int loadNGrams(std::string filename,
-		boost::unordered_map<libgram::FastString<wchar_t>, double> &result, bool quiet);
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &result);
 
 bool loadQuery(std::wstringstream &data, libgram::Query<wchar_t> &query);
 
