@@ -20,6 +20,7 @@
 
 #include "data.h"
 #include "utf8codec.h"
+#include "log.h"
 
 using boost::asio::ip::tcp;
 
@@ -67,7 +68,7 @@ void session(libgram::Solver<wchar_t> &solver, socket_ptr sock) {
 						libgram::Query<wchar_t> query;
 						data::loadQuery(task_stream, query);
 						std::wstring result = solver.solve(query) + L"\n";
-						std::wcout << "Result is: " << result << std::endl;
+						Log::info << "[result] " << result << std::endl;
 						boost::shared_ptr<char> output_buffer(new char[(result.length() + 1) * 16]); // TODO: Possible buffer overflow for crazy encodings
 						size_t length = encoding::exportAsUtf8(output_buffer.get(), result.c_str(),
 								(result.length() + 1) * 16, result.length() + 1);
@@ -86,7 +87,7 @@ void session(libgram::Solver<wchar_t> &solver, socket_ptr sock) {
 			response_stream.clear();
 		}
 	} catch (std::exception& e) {
-		std::wcerr << "Exception in thread: " << e.what() << std::endl;
+		Log::warning << "Exception in thread: " << e.what() << std::endl;
 		// std::wcerr << boost::diagnostic_information(e);
 	}
 }

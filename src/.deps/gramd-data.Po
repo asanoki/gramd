@@ -398,7 +398,8 @@ gramd-data.o: data.cpp \
  /usr/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
  /usr/include/boost/preprocessor/comparison/less_equal.hpp \
  /usr/include/boost/preprocessor/logical/not.hpp \
- /usr/include/boost/next_prior.hpp /usr/include/boost/noncopyable.hpp
+ /usr/include/boost/next_prior.hpp /usr/include/boost/noncopyable.hpp \
+ log.h
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/fstream:
 
@@ -1287,3 +1288,5 @@ boost_extras/wprogress.h:
 /usr/include/boost/next_prior.hpp:
 
 /usr/include/boost/noncopyable.hpp:
+
+log.h:

@@ -13,11 +13,12 @@
 #include "data.h"
 #include "encoding.h"
 #include "boost_extras/wprogress.h"
+#include "log.h"
 
 namespace data {
 
 int loadNGrams(std::string filename,
-		boost::unordered_map<libgram::FastString<wchar_t>, double> &result, bool quiet = false) {
+		boost::unordered_map<libgram::FastString<wchar_t>, double> &result) {
 	// Loading n-grams from a file
 	std::wifstream data(filename.c_str());
 	data.imbue(*encoding::getUtf8Locale());
@@ -28,8 +29,7 @@ int loadNGrams(std::string filename,
 	data.seekg(0, std::ios::beg);
 	boost::progress_display show_progress(input_size, std::wcout);
 	boost::shared_ptr<boost::progress_timer> timer;
-	if (!quiet)
-		timer.reset(new boost::progress_timer());
+	timer.reset(new boost::progress_timer());
 	std::wstring line;
 	std::wstring line_gram;
 	int line_value;
@@ -40,14 +40,14 @@ int loadNGrams(std::string filename,
 	}
 	int line_no = 0;
 	int before_pos = 0;
+	Log::debug << "loadNGrams(" << filename.c_str() << "): Loading data..." << std::endl;
 	while (!data.eof()) {
 		line_no++;
+		Log::debug << "loadNGrams(" << filename.c_str() << "): Line number: " << line_no << std::endl;
 		std::getline(data, line);
-		if (!quiet) {
-			if (line_no % 10000 == 0) {
-				show_progress += ((int) data.tellg() - before_pos);
-				before_pos = data.tellg();
-			}
+		if (line_no % 10000 == 0) {
+			show_progress += ((int) data.tellg() - before_pos);
+			before_pos = data.tellg();
 		}
 		if (line.length() < n)
 			continue;
@@ -58,9 +58,8 @@ int loadNGrams(std::string filename,
 		libgram::FastString<wchar_t> fast_gram(n, line_gram.length(), 0, line_gram.c_str());
 		result[fast_gram] = line_value;
 	}
-	if (!quiet) {
-		show_progress.operator +=(input_size - show_progress.count());
-	}
+	show_progress.operator +=(input_size - show_progress.count());
+	Log::debug << "loadNGrams(" << filename.c_str() << "): Data loaded..." << std::endl;
 	return n;
 }
 

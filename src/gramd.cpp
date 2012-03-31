@@ -26,30 +26,9 @@
 #include "data.h"
 #include "encoding.h"
 #include "server.h"
-
-int FastStringDebug = 0;
+#include "log.h"
 
 namespace po = boost::program_options;
-
-namespace boost {
-namespace serialization {
-
-template<class Archive>
-void serialize(Archive & ar, std::pair<const std::wstring, double>& s
-		, const unsigned int version) {
-	ar & s.first;
-	ar & s.second;
-}
-
-template<class Archive>
-void unserialize(Archive & ar, std::pair<const std::wstring, double>& s
-		, const unsigned int version) {
-	ar | s.first;
-	ar | s.second;
-}
-
-} // namespace serialization
-} // namespace boost
 
 int main(int argc, char **argv) {
 	try {
@@ -64,12 +43,13 @@ int main(int argc, char **argv) {
 		desc.add_options()("epsilon", po::value<double>(), "epsilon value");
 		desc.add_options()("help", "display help message");
 		desc.add_options()("verbose,v", "output useful information");
+		desc.add_options()("debug,d", "output debug information");
 		desc.add_options()("interactive,i", "do not detach");
 		desc.add_options()("quiet,q", "do not display any startup messages");
 		desc.add_options()("port,p", po::value<short>(), "set listening port");
 		desc.add_options()("auto,a", po::value<std::string>(),
 				"filename to store automatically chosen port");
-		desc.add_options()("addr,a", "set listening address");
+		desc.add_options()("addr,a", "set binding address");
 		desc.add_options()("locale,l", po::value<std::string>(),
 				"define custom locale");
 		desc.add_options()("load,L", po::value<std::vector<std::string> >(),
@@ -89,8 +69,25 @@ int main(int argc, char **argv) {
 			return -1;
 		}
 
+		Log::message.enable();
+		Log::warning.enable();
+		Log::error.enable();
+
+		if (vm.count("verbose")) {
+			Log::info.enable();
+		}
+
+		if (vm.count("debug")) {
+			Log::debug.enable();
+		}
+
 		if (vm.count("quiet")) {
-			quiet = true;
+			Log::debug.disable();
+			Log::info.disable();
+			Log::message.disable();
+			Log::notice.disable();
+			Log::warning.disable();
+			Log::error.disable();
 		}
 
 		// Set dictionary locale
@@ -103,7 +100,7 @@ int main(int argc, char **argv) {
 				std::locale::global(std::locale(locale_name.c_str()));
 				setlocale(LC_ALL, locale_name.c_str());
 			} catch (...) {
-				std::wcerr << "Unable to set locale to: " << locale_name.c_str()
+				Log::error << "Unable to set locale to: " << locale_name.c_str()
 						<< std::endl;
 				return -1;
 			}
@@ -113,7 +110,8 @@ int main(int argc, char **argv) {
 				std::locale::global(std::locale(""));
 				setlocale(LC_ALL, "");
 			} catch (...) {
-				std::wcerr << "Unable to set to system locale. Trying C instead."
+				Log::error
+						<< "Unable to set to system locale. Trying C instead."
 						<< std::endl;
 				std::locale::global(std::locale("C"));
 				setlocale(LC_ALL, "C");
@@ -132,28 +130,33 @@ int main(int argc, char **argv) {
 		int retries = 5000;
 		if (vm.count("port")) {
 			port = vm["port"].as<short>();
+			Log::info << "Trying to bind to port: " << port << std::endl;
 			acceptor = server_init(io_service, port);
 		} else if (vm.count("auto")) {
 			for (int retry = 0; retry < retries; retry++) {
 				port = 45000 + retry;
+				Log::info << "Trying to automatically bind to port: " << port << std::endl;
 				try {
 					acceptor = server_init(io_service, port);
 					break;
 				} catch (std::exception &e) {
 					if (retry == retries - 1) {
+						Log::info << "Failed. No more retries." << std::endl;
 						throw;
+					} else {
+						Log::info << "Failed. Retrying using the next port." << std::endl;
 					}
 				}
 			}
 			std::ofstream port_file(vm["auto"].as<std::string>().c_str(),
 					std::ios::out);
+			Log::info << "Writing port name to: " << vm["auto"].as<std::string>().c_str() << std::endl;
 			port_file.imbue(std::locale("C"));
 			port_file << port << "\n";
 			port_file.close();
 		}
 
-		if (!quiet)
-			std::wcout << "Listening on port: " << port << "." << std::endl;
+		Log::message << "Listening on port: " << port << "." << std::endl;
 
 		// Load dictionaries
 		boost::unordered_map<libgram::FastString<wchar_t>, double> map;
@@ -164,27 +167,23 @@ int main(int argc, char **argv) {
 		for (std::vector<std::string>::iterator it = dict.begin();
 				it != dict.end(); ++it) {
 			std::string filename = *it;
-			if (!quiet)
-				std::wcout << "Loading dictionary: " << filename.c_str() << L"..."
-						<< std::endl;
+			Log::message << "Loading dictionary: " << filename.c_str()
+					<< L"..." << std::endl;
 			grams_before = map.size();
 			int n = data::loadNGrams(filename, map, quiet);
-			if (!quiet)
-				std::wcout << "Loaded, " << (map.size() - grams_before) << " * "
-						<< n << "-grams." << std::endl;
+			Log::message << "Loaded, " << (map.size() - grams_before) << " * "
+					<< n << "-grams." << std::endl;
 			if (n < 0) {
 				// Unabled to load dictionary
-				std::wcerr << "Unable to load dictionary: " << filename.c_str()
+				Log::error << "Unable to load dictionary: " << filename.c_str()
 						<< std::endl;
 				return -1;
 			}
 			if (n > max_gram)
 				max_gram = n;
 		}
-		if (!quiet)
-			std::wcout << "Loaded dictionaries with " << map.size()
-					<< " grams in total." << std::endl;
-
+		Log::message << "Loaded dictionaries with " << map.size()
+				<< " grams in total." << std::endl;
 
 		/* Generate grams of smaller order */
 		boost::unordered_map<libgram::FastString<wchar_t>, double> sub_map;
@@ -206,36 +205,8 @@ int main(int argc, char **argv) {
 		}
 
 		map.insert(sub_map.begin(), sub_map.end());
-		if (!quiet)
-			std::wcout << "Generated " << map.size()
-					<< " m-grams in total." << std::endl;
-
-		/*
-		 // Convert occurences to probabilities
-		 double ngrams_sum = 0;
-		 for (boost::unordered_map<std::wstring, double>::iterator it =
-		 map.begin(); it != map.end(); it++) {
-		 ngrams_sum += it->second;
-		 }
-		 for (boost::unordered_map<std::wstring, double>::iterator it =
-		 map.begin(); it != map.end(); it++) {
-		 map[it->first] = it->second / ngrams_sum;
-		 }
-		 */
-
-		/*
-		 // Save cache
-		 {
-		 boost::progress_timer timer;
-		 saveCache("cache.dat", map);
-		 }
-
-		 // Load cache
-		 {
-		 boost::progress_timer timer;
-		 loadCache("cache.dat", map);
-		 }
-		 */
+		Log::message << "Generated " << map.size() << " m-grams in total."
+				<< std::endl;
 
 		// Create emission provider
 		libgram::SimpleProvider<wchar_t,
@@ -250,34 +221,29 @@ int main(int argc, char **argv) {
 		} else {
 			provider.setAutoEpsilon();
 		}
-		if (!quiet)
-			std::wcout << "The longest gram is: " << provider.maximumGram()
-					<< ", epsilon is: " << provider.epsilon() << "."
-					<< std::endl;
+		Log::message << "The longest gram is: " << provider.maximumGram()
+				<< ", epsilon is: " << provider.epsilon() << "." << std::endl;
 
 		// Configure solver
 		solver.setEmissionProvider(&provider);
 
 		// Detach socket (or not)
 		if (!vm.count("interactive")) {
-			if (!quiet)
-				std::wcout << "Detaching..." << std::endl;
+			Log::message << "Detaching..." << std::endl;
 			if (daemon(0, 0) < 0) {
-				std::wcerr << "Unable to detach" << std::endl;
+				Log::error << "Unable to detach" << std::endl;
 				return -1;
 			}
 		}
 
 		// Start server loop
-		if (!quiet)
-			std::wcout << "Started." << std::endl;
+		Log::message << "Started." << std::endl;
 		server_loop(solver, io_service, acceptor);
-		if (!quiet)
-			std::wcout << "Closed." << std::endl;
+		Log::message << "Closed." << std::endl;
 
 		return 0;
 	} catch (std::exception &e) {
-		std::wcout << e.what() << std::endl;
+		Log::error << e.what() << std::endl;
 		return -1;
 	}
 }

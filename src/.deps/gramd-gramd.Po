@@ -1104,7 +1104,7 @@ gramd-gramd.o: gramd.cpp \
  /usr/include/boost/exception/current_exception_cast.hpp \
  /usr/include/boost/exception/detail/clone_current_exception.hpp \
  /usr/include/boost/scoped_array.hpp \
- /usr/include/boost/smart_ptr/scoped_array.hpp
+ /usr/include/boost/smart_ptr/scoped_array.hpp log.h
 
 /usr/lib/gcc/i686-redhat-linux/4.6.2/../../../../include/c++/4.6.2/vector:
 
@@ -3533,3 +3533,5 @@ server.h:
 /usr/include/boost/scoped_array.hpp:
 
 /usr/include/boost/smart_ptr/scoped_array.hpp:
+
+log.h:

@@ -1,5 +1,5 @@
 bin_PROGRAMS = gramd
-gramd_SOURCES = gramd.cpp data.cpp encoding.cpp
+gramd_SOURCES = gramd.cpp data.cpp encoding.cpp log.cpp
 
 gramd_CPPFLAGS = $(BOOST_CPPFLAGS)
 gramd_LDFLAGS = $(BOOST_THREAD_LDFLAGS) $(BOOST_SYSTEM_LDFLAGS) $(BOOST_WSERIALIZATION_LDFLAGS) $(BOOST_PROGRAM_OPTIONS_LDFLAGS) \
