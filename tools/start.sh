@@ -1,11 +1,11 @@
 #!/bin/sh
 
 AUTO_PORT_FILENAME=/tmp/.gramd
-DICTIONARIES="../data/ngrams-2.txt"
+DICTIONARIES="../data/ngrams-2-big.txt"
 BIN_COMMAND=gramd # <- Change it if installed in custom location
 
-#OPTIONS="--interactive --epsilon 0.01"
-OPTIONS="--verbose --epsilon 0.0001"
+OPTIONS="--interactive --verbose --epsilon 0.0001"
+#OPTIONS="--verbose --epsilon 0.001"
 
 `killall gramd 2> /dev/null`
 if [ $? -eq 0 ]; then
