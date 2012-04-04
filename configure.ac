@@ -9,10 +9,10 @@ AC_PROG_LIBTOOL
 AC_PROG_INSTALL
 AM_INIT_AUTOMAKE()
 
-AC_ARG_WITH([libgram-include-path],
-  [AS_HELP_STRING([--with-libgram-include-path],
-    [location of the libgram headers])],
-  [LIBGRAM_CFLAGS="-I$withval"],
+AC_ARG_WITH([libgram],
+  [AS_HELP_STRING([--with-libgram],
+    [location of the libgram library files])],
+  [LIBGRAM_CFLAGS="-I$withval/include"],
   [LIBGRAM_CFLAGS=''])
 AC_SUBST([LIBGRAM_CFLAGS])
 
@@ -29,7 +29,7 @@ BOOST_SERIALIZATION([mt])
 BOOST_WSERIALIZATION([mt])
 BOOST_PROGRAM_OPTIONS([mt])
 
-CPPFLAGS=$CPPFLAGS $LIBGRAM_CFLAGS
+CPPFLAGS="$CPPFLAGS $LIBGRAM_CFLAGS"
 
 AC_LANG_PUSH([C++])
 #	boost/serialization/collections_load_imp.hpp \
