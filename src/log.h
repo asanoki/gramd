@@ -9,6 +9,16 @@
 #define LOG_H_
 
 #include <iostream>
+#include <ostream>
+
+class Log;
+
+typedef std::wostream& (*manip1)(std::wostream&);
+
+typedef std::basic_ios<std::wostream::char_type, std::ostream::traits_type> ios_type;
+typedef ios_type& (*manip2)(ios_type&);
+
+typedef std::ios_base& (*manip3)(std::ios_base&);
 
 class Log {
 private:
@@ -35,6 +45,21 @@ public:
 		return m_enabled;
 	}
 
+	Log& operator<<(manip1 pf) {
+		if (m_enabled)
+			m_stream << pf;
+	}
+
+	Log& operator<<(manip2 pf) {
+		if (m_enabled)
+			m_stream << pf;
+	}
+
+	Log& operator<<(manip3 pf) {
+		if (m_enabled)
+			m_stream << pf;
+	}
+
 	std::wostream &stream() {
 		return m_stream;
 	}
@@ -47,15 +72,9 @@ public:
 template<typename T>
 inline Log &operator<<(Log &l, const T &t) {
 	if (l.enabled()) {
-	l.stream() << t;
+		l.stream() << t;
 	}
 	return l;
-}
-
-typedef std::wostream& (*ostream_manipulator)(std::wostream&);
-
-inline Log& operator<<(Log& os, ostream_manipulator pf) {
-	return operator<<<ostream_manipulator>(os, pf);
 }
 
 #endif /* LOG_H_ */
